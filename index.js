@@ -1,18 +1,38 @@
-
 const input=document.querySelector('#input');
 const output=document.querySelector('#output');
+const rupee=document.querySelector('#rupee');
 
-input.addEventListener('input',()=>{
-  const url = new URL('https://api.exchangeratesapi.io/latest?base=USD&symbols=INR');
+/*
+const url = new URL('https://api.exchangeratesapi.io/latest?base=USD&symbols=INR');
   const param = { base: 'USD', symbols: 'INR' };
   Object.keys(param).forEach((key) => {
       url.searchParams.append(key, param[key]);
   });
   url.search = new URLSearchParams(param).toString();
-  fetch(url)
-  .then((response) => response.json())
+*/
+
+window.addEventListener('load',()=>{
+    fetch('https://api.exchangeratesapi.io/latest?base=USD&symbols=INR')
+     .then((response) => response.json())
       .then((json) => {
-          output.value = Math.round((10/json.rates.INR*input.value) * 100) / 100 ;
+          rupee.innerHTML = (json.rates.INR).toFixed(2);
+      });
+
+});
+
+input.addEventListener('input',()=>{
+    fetch('https://api.exchangeratesapi.io/latest?base=USD&symbols=INR')
+     .then((response) => response.json())
+      .then((json) => {
+          output.value = (10/json.rates.INR*input.value).toFixed(2);
       });
 });
 
+
+output.addEventListener('input',()=>{
+    fetch('https://api.exchangeratesapi.io/latest?base=USD&symbols=INR')
+    .then((response) => response.json())
+      .then((json) => {
+          input.value = (json.rates.INR/10*output.value).toFixed(2);
+      });
+});

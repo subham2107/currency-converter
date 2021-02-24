@@ -1,15 +1,27 @@
 body{
-  background: papayawhip;
+  background-color: #f6f8fa;
+  font-family: 'Work Sans', sans-serif;
+  margin:0;
+}
+h1{
+  text-align: center;background-color: #247BA0;
+  color: #fff;
+  line-height: 50px;
+  margin:0;
 }
 
 .main-content{
   display:flex;
   align-items: center;
   justify-content: center;
-  height:calc( 100vh );
+  height:calc( 100vh - 110px);
 }
 
 .input-output{
-  border:solid 2px black;
-  padding: 20px;
+  border:solid 1px black;
+  padding: 40px;
+  background-color: #247BA0;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px  #030303;
 }

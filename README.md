@@ -1,2 +1,2 @@
 # currency-converter
-You can check it out here: https://new-currency-converter.netlify.app/
+Check it out here: https://new-currency-converter.netlify.app/

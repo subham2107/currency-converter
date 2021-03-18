@@ -25,3 +25,20 @@ h1{
   border-radius: 10px;
   box-shadow: 1px 2px 3px  #030303;
 }
+
+.footer-wrapper{
+  min-height: 45px;
+}
+
+.non-footer {
+  min-height: calc(100vh - 17px);
+}
+
+.footer-logo{
+  padding-bottom: 10px;
+}
+
+.footer-logo img{
+  height: 40px;
+  width: 40px;
+}
